@@ -16,7 +16,7 @@ const productSchema = new mongoose.Schema({
   isNew: { type: Boolean, default: false },
   isTopSelling: { type: Boolean, default: false },
   tags: [{ type: String }],
-}, { timestamps: true });
+}, { timestamps: true, suppressReservedKeysWarning: true });
 
 productSchema.index({ name: 'text', description: 'text', tags: 'text' });
 
