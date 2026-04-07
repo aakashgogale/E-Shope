@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    -webkit-font-smoothing: antialiased;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-black text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-all duration-200 text-sm;
+  }
+  .btn-outline {
+    @apply border border-black text-black px-8 py-3 rounded-full font-medium hover:bg-black hover:text-white transition-all duration-200 text-sm;
+  }
+  .section-title {
+    @apply font-black text-3xl md:text-4xl lg:text-5xl text-center uppercase tracking-tight;
+  }
+  .container-main {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .product-card {
+    @apply bg-white rounded-2xl overflow-hidden cursor-pointer;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #888; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #555; }
+
+/* Range input custom */
+input[type=range] {
+  -webkit-appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: #e8e8e8;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background: #000;
+  cursor: pointer;
+}
