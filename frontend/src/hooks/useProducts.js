@@ -15,9 +15,9 @@ const useProducts = (initialFilters = {}) => {
     try {
       const params = Object.fromEntries(Object.entries(filters).filter(([, v]) => v !== '' && v !== null && v !== undefined));
       const { data } = await api.get('/products', { params });
-      setProducts(data.products);
-      setTotal(data.total);
-      setPages(data.pages);
+      setProducts(data.products || []);
+      setTotal(data.total || 0);
+      setPages(data.pages || 1);
     } catch (err) {
       setError(err.response?.data?.message || 'Failed to fetch products');
     } finally {

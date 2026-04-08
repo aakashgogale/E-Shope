@@ -44,7 +44,7 @@ export const CartProvider = ({ children }) => {
       if (data.sessionId && !localStorage.getItem('shopco_session')) {
         localStorage.setItem('shopco_session', data.sessionId);
       }
-      dispatch({ type: 'SET_CART', payload: data.cart.items || [] });
+      dispatch({ type: 'SET_CART', payload: data?.cart?.items || [] });
       return true;
     } catch (err) {
       dispatch({ type: 'SET_LOADING', payload: false });
